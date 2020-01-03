@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">{{title}}</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <span data-feather="calendar"></span>
+      This week
+    </button>
+  </div>
+</div>
+
+<div class="example-container">
+  <form class="example-container" [formGroup]="options">
+
+    <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+
+    <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+      <input matInput placeholder="TC Kimlik" required>
+    </mat-form-field>
+
+    <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+      <input matInput placeholder="Gsm" required>
+    </mat-form-field>
+
+    <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+      <input matInput placeholder="E-mail" required>
+    </mat-form-field>
+
+    <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+      <mat-select required>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+      <mat-label>
+        Çalışma grubunu seçiniz
+      </mat-label>
+    </mat-form-field>
+
+
+    <div>
+      <label>Personel Tipi: </label>
+      <mat-radio-group formControlName="floatLabel">
+        <mat-radio-button value="MaviYaka">Mavi Yaka</mat-radio-button>
+        <mat-radio-button value="BeyazYaka">Beyaz Yaka</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form> 
+
+  <div class="deneme1">
+    <button mat-raised-button color="primary">Kaydet</button>
+    <button mat-button color="primary">İptal</button>
+  </div>
+</div>
+
+<style>
+  .deneme1 {
+    display: -webkit-flex;
+    -webkit-flex-direction: row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+</style>
